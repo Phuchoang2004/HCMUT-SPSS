@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./HCMUT_SPSO_MAIN:/var/www/html
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge 
